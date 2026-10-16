@@ -17,14 +17,14 @@ import type { Palette, SearchParams, WorkerMessage, WorkerRequest } from './lib/
 import './App.css'
 
 const DEFAULTS: SearchParams = {
-  paletteCount: 6,
-  colorCount: 5,
-  minDeltaE: 15,
-  minContrastBlack: 3,
-  minContrastWhite: 3,
+  paletteCount: 5,
+  colorCount: 6,
+  minDeltaE: 12,
+  minContrastBlack: 7.5,
+  minContrastWhite: 1,
   colorBlind: true,
-  styleId: 'any',
-  timeLimitSec: 60,
+  styleId: 'muted',
+  timeLimitSec: 300,
 }
 
 type NumericKey = Exclude<keyof SearchParams, 'colorBlind' | 'styleId'>
