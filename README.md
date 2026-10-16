@@ -8,5 +8,3 @@ Find colour palettes with distinct colours and configurable contrast.
 npm ci
 npm run dev
 ```
-
-Pushes to `main` build and deploy to GitHub Pages automatically.
