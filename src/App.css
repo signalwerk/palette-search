@@ -1,0 +1,407 @@
+.app {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: -0.02em;
+}
+header p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+.panel h2,
+.results h2 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.controls {
+  position: sticky;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+@media (max-width: 860px) {
+  .controls {
+    position: static;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.field > span {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.field small,
+.check small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.num {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.num em {
+  color: var(--muted);
+  font-style: normal;
+  white-space: nowrap;
+}
+input[type='number'],
+select {
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.check {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.check input {
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+.hint {
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.hint.bad {
+  color: var(--fail);
+}
+.lumbar {
+  position: relative;
+  height: 10px;
+  margin-top: 6px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #000, #fff);
+  border: 1px solid var(--border);
+}
+.lumbar-window {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  min-width: 2px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+}
+
+.buttons button {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.go {
+  background: var(--accent);
+  color: #fff !important;
+}
+.go:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.stop {
+  background: var(--fail);
+  color: #fff !important;
+}
+
+button.small {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  cursor: pointer;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.muted {
+  color: var(--muted);
+}
+.error {
+  color: var(--fail);
+}
+.pass {
+  color: var(--pass);
+}
+.fail {
+  color: var(--fail);
+}
+
+.strip {
+  display: flex;
+  gap: var(--chip-gap);
+}
+.strip .chip {
+  flex: 1;
+  border-radius: 6px;
+}
+.strip.small {
+  position: relative;
+  align-items: center;
+}
+.strip.small .chip {
+  height: 18px;
+  border-radius: 3px;
+}
+.strip-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  width: 86px;
+  flex: none;
+  text-align: right;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 6px;
+}
+.metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+  padding: 5px 8px;
+  background: var(--bg);
+  border-radius: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.metric span {
+  color: var(--muted);
+}
+.metric.unchecked {
+  opacity: 0.5;
+}
+
+.count {
+  font-size: 0.8rem;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  margin-left: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 16px;
+}
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: pop 0.25s ease-out;
+}
+@keyframes pop {
+  from {
+    transform: scale(0.97);
+    opacity: 0;
+  }
+}
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-head h3 {
+  font-size: 0.95rem;
+}
+.card-head .spacer {
+  flex: 1;
+}
+.score {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.score b {
+  color: var(--text);
+}
+.card.busy .swatches {
+  opacity: 0.7;
+}
+button.small:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.card-head select {
+  width: auto;
+  padding: 3px 6px;
+  font-size: 0.8rem;
+}
+
+.swatches {
+  display: flex;
+  gap: var(--chip-gap);
+}
+.swatch {
+  flex: 1;
+  min-width: 0;
+  height: 110px;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 2px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: left;
+}
+.swatch code {
+  margin-top: 4px;
+  font-size: 0.7rem;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cvd-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.export {
+  margin-top: 16px;
+}
+.export summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.export-head {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+}
+.export-head select {
+  width: auto;
+}
+.export pre {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  max-height: 320px;
+  overflow: auto;
+  font-size: 0.8rem;
+}
+
+.results {
+  min-width: 0;
+}
+.results-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+  min-height: 32px;
+}
+.results-head h2 {
+  margin: 0;
+}
+.results-head button {
+  margin-left: auto;
+}
+.note {
+  font-size: 0.8rem;
+  margin: 4px 0 14px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.status.running {
+  color: var(--accent);
+}
+.status.done {
+  color: var(--pass);
+}
+.status.error,
+.status.timeout {
+  color: var(--fail);
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  vertical-align: -2px;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
